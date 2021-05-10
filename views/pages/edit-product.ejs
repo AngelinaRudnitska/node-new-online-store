@@ -1,0 +1,30 @@
+<%- include('../layout/header.ejs') %>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form action="/edit-product/<%= product.id %>" method="post">
+                <div class="form-group">
+                    <label for="product">Title</label>
+                    <input type="text" value="<%= product.title %>" class="form-control" name="title" aria-describedby="addProduct">
+                </div> 
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <input type="text" value="<%= product.category %>" class="form-control" name="category" aria-describedby="addProduct">
+                </div>
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" value="<%= product.price %>" class="form-control" name="price" aria-describedby="addProduct">
+                </div>
+                <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="text" value="<%= product.image %>" class="form-control" name="image" aria-describedby="addProduct">
+                </div>
+                <div class="form-group">
+                    <textarea name="description" id="" cols="30" rows="6" style="width: 100%;"><%= product.description %></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Edit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include('../layout/footer.ejs') %>
